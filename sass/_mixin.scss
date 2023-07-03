@@ -1,0 +1,62 @@
+//1em = 16px
+@mixin respond($break){
+
+    @if $break==tab-land{  //1200 px
+        @media (max-width: 75em){@content};
+    }
+    @if $break==tab-port{  //900px
+        @media (max-width: 56.25em){@content};
+    }
+    @if $break==tab-port-2{  //700px
+        @media (max-width: 43.75em){@content};
+    }
+    @if $break==tab-port-5{  //800px
+        @media (max-width: 50em){@content};
+    }
+    @if $break==phone{   
+        @media (max-width: 31.25em){@content};
+    }
+}
+@mixin center($l-r:center,$gapr:0){
+    display: flex;
+    justify-content: $l-r;
+    align-items: center;
+    gap: $gapr;
+  }
+// ____________________________
+@keyframes menu-hide-li{
+    35%{
+        transform: translateX(0);
+    }
+    37%{
+        transform: translateX(30rem);
+    }
+    85%{
+        transform: translateX(-1rem);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes menu-show-li{
+    100%{
+        transform: translateX(0rem);
+    }
+}
+// _______________________________
+@keyframes menu-hide-back{  
+    0%{
+        height: 50rem;
+    }
+    100%{
+        height: 6%;
+    }
+}
+@keyframes menu-show-back{  
+    0%{
+        height: 6%;
+    }
+    100%{
+        height: 50rem;
+    }
+}

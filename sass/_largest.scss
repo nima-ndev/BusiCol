@@ -1,0 +1,96 @@
+.largest{
+    grid-area: largest;
+    display: flex;
+    justify-content: space-between;
+    @include respond(tab-port){
+        flex-direction: column;
+    }
+    &__text{
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding:0 5% 0 5%;
+        gap: 20px;
+        @include respond(tab-port){
+            padding: 8rem 7rem;
+            line-height: 4rem;
+        }
+        @include respond(phone){
+            padding: 8rem 5rem;
+         }
+        h2{
+            font-size: 4rem;
+            @include respond(tab-port){
+                font-size: 5rem;
+            }
+            @include respond(phone){
+                font-size: 3.5rem;
+            }
+        }
+        ul{
+            li{
+                list-style: url(../img/icon/check.svg);
+                font-size: 1.5rem;
+            }
+        }
+    
+        button{
+            background: $greenv;
+            width: 35%;
+            padding: 10px 0;
+        }
+        p{
+            color: rgb(170, 170, 170);
+            font-size: 2rem;
+        }
+    }
+    &__img{
+        flex-basis: 50%;
+        img{
+            width: 100%;
+        }
+    }
+
+}
+.number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    background-color: #f5fbff;
+    @include respond(tab-port){
+        gap: 0;
+    }
+    @include respond(tab-port-2){
+       flex-direction: column;
+    }
+
+    div{
+        padding: 11rem 8rem;
+        text-align: center;
+        @include respond(tab-port-2){
+            padding: 4rem;
+        }
+    }
+    h1{
+        display: inline;
+        font-size: 4rem;
+        @include respond(tab-port-2){
+            font-size: 6rem;
+        }
+    }
+    h6{
+        font-size: 2rem;
+        color: rgb(156, 156, 156);
+        @include respond(tab-port-2){
+            font-size: 2.5rem;
+        }
+    }
+    span{
+        font-size: 4rem;
+        @include respond(tab-port-2){
+            font-size: 6rem;
+        }
+    }
+}

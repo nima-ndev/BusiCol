@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+
+// ===== Variables ===== //
+$greenv:#28ae60;
+
+
+
+html{
+  font-size: 62.5%;
+  @include respond(tab-land){
+    font-size: 56.25%   // = 9px
+ } 
+  @include respond(tab-port){
+    font-size: 50%
+  }
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+main{
+  display: grid;
+  grid-template:
+  "slide-area" 100vh
+  "solutions" 100vh
+  "largest" auto
+  /100vw;
+  li:hover,i:hover{
+    color: $greenv;
+    cursor: pointer;
+  }
+  @include respond(tab-port-2){
+    grid-template:
+    "slide-area" 100vh
+    "solutions" 130vh
+    "largest" auto
+    /100vw;
+}
+}
+button{
+  font-size: 1.5rem !important;
+}

@@ -1,0 +1,201 @@
+@import "mixin";
+@import "base";
+@import "solutions";
+@import "largest";
+@import "cases";
+@import "footer";
+
+
+//________
+.carousel-item{
+  width: 100%;
+  height: 100vh;
+
+  &__img2{
+    width: 100%;
+    height: 100%; 
+    background: url(../img/slidshow/banner2.png.webp);
+    background-size: cover;
+    background-position: center;
+  }
+  &__img1{
+    width: 100%;
+    height: 100%;
+    background: url(../img/slidshow/banner.png.webp);
+    background-size: cover;
+    background-position: center;
+  }
+}
+.slide-area{
+  grid-area: slide-area;
+  overflow: hidden;
+
+  button{
+    z-index: 3;
+    @include respond(phone){
+      display: none;
+    }
+  }
+  
+  &__front{
+    background:linear-gradient(to top, rgba(49, 49, 49, 0.5)50%,rgba(49, 49, 49, 0.5)50%);
+    color: white;
+    z-index: 2;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 
+    ". contact-logo . contact-address ." 1fr
+    ". logo menue search ." 2fr
+    ". title title title ." 10fr
+    /8vw 24vw 30vw 30vw 8vw;
+    @include respond(tab-land){
+      grid-template: 
+      ". contact-logo . contact-address ." 1fr
+      ". logo menue search ." 2fr
+      ". title title title ." 10fr
+      /10vw 24vw 24vw 32vw 10vw;
+   } 
+   @include respond(phone){
+    grid-template: 
+    ". contact-logo . contact-address ." 1fr
+    ". logo menue search ." 2fr
+    ". title title title ." 10fr
+    /5vw 25vw 23vw 33vw 5vw;
+  }
+    &__contact--logo{
+      color: white;
+      grid-area: contact-logo;
+      @include center(left,20px);
+      font-size: 1.5rem;
+      @include respond(tab-port){
+        display: none;
+      }
+    }
+    &__contact--address{
+      color: $greenv;
+      grid-area: contact-address;
+      @include center(right,10px);
+      font-size: 1.5rem;
+      @include respond(tab-port){
+        display: none;
+      }
+      span{
+        color: white;
+      }
+      i{
+        padding-left: 25px;
+      }
+    }
+    &__logo{
+    grid-area: logo;
+    @include center(left);
+    border-bottom: solid 1px rgb(82, 82, 82);
+    @include respond(tab-port){
+      position: absolute;
+      left: 0;
+      top: -5rem;
+      border: none;
+    }
+    }
+    &__menu{
+      grid-area: menue;
+      @include center($gapr:30px);
+      list-style: none;
+      height: 100%;
+      border-bottom: solid 1px rgb(82, 82, 82);
+      font-size: 1.5rem;
+      #menu-icon{
+        display: none;
+        font-size: 2.5rem;
+        background-color: rgb(30, 30, 30);
+        border-radius: 1rem;
+        padding: 0.2rem 1rem;
+      }
+      @include respond(tab-port){
+        grid-area: auto;
+        position: absolute;
+        flex-direction: column;
+        align-items: start;
+        right: 10vw;
+        top: 10rem;
+        height: 6%; //
+        width: 80vw;
+        background-color: rgb(69, 69, 69);
+        padding: 2rem 4rem ;
+        overflow: hidden;
+        border-radius: 1rem;
+        li:not(:first-child){
+          display: none;
+          transform: translateX(-10rem);
+          // animation-name: menu-hide;
+          // animation-duration: 2s;
+        }
+        #menu-icon{
+          display: block;
+          align-self: flex-end;
+          // justify-self: end;
+        }
+      }
+      @include respond(phone){
+        width: 100vw;
+        right: 0;
+        border-radius: 0;
+      }
+    }
+    &__search{
+      grid-area: search;
+      @include center(right,30px);
+      border-bottom: solid 1px rgb(82, 82, 82);
+      button{
+        padding: 10px 30px;
+        background-color: $greenv;
+      }
+      @include respond(tab-port){
+        display: none;
+      }
+    }
+    &__title{
+      grid-area: title;
+      @include center($gapr:20px);
+      flex-direction: column;
+      align-items: start;
+      h1{
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+        font-weight: 600;
+        @include respond(phone){
+          font-size: 3.5rem; 
+        }
+      }
+      h4{
+        font-size: 2rem;
+        font-weight: 90px ;
+        color: rgb(187, 187, 187);
+      }
+      .button-title button{
+        padding: 10px 40px;
+      }
+    }
+  }
+  &__black-back{
+    height: 7vh;
+    width: 100vw;
+    z-index: 1;
+    background-color: rgb(36, 36, 36);
+    position: absolute;
+    opacity: 0.5;
+    @include respond(tab-port){
+      display: none;
+    }
+  }
+}
+#bnt-1{
+  background: $greenv;
+}
+#bnt-2:hover{
+  background: $greenv;
+  border: none;
+  color: white;
+}

@@ -1,0 +1,115 @@
+.solutions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:100px;
+    // min-height: 70vh;
+
+    h2{
+        font-size: 3.6rem;
+    }
+    &__images{
+        display: flex;
+        gap: 50px;
+        h5 , i{
+            font-size: 2rem;
+        }
+        @include respond(tab-port-2){
+            flex-direction: column;
+        }
+        >div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 23vw;
+            height: 23vw;
+            background-size: cover;
+            color: white;
+            font-size: 2rem;
+            @include respond(tab-port){
+                width: 28vw;
+                height: 28vw;
+            }
+            @include respond(tab-port-2){
+                width: 75vw;
+                height: 33rem;
+            }
+            @include respond(phone){
+                width: 90vw;
+                height: 33rem;
+            }
+        }
+        &--invoicing{
+            background:linear-gradient(to top, rgba(75, 75, 75, 0.5)50%,rgba(75, 75, 75, 0.5)50%),url(../img/about/banner.png.webp);
+            &:hover .green-window{
+                transform: translateY(0px);
+            }
+        }
+        &--business{
+            background:linear-gradient(to top, rgba(75, 75, 75, 0.5)50%,rgba(75, 75, 75, 0.5)50%),url(../img/about/2.png.webp) ;
+            &:hover .green-window{
+                transform: translateY(0px);
+            }
+        }
+        &--solving{
+            background:linear-gradient(to top, rgba(75, 75, 75, 0.5)50%,rgba(75, 75, 75, 0.5)50%),url(../img/about/3.png.webp) ;
+            &:hover .green-window{
+                transform: translateY(0px);
+            }
+        }
+    }
+    .hover{
+       
+        width: 23vw;
+        height: 23vw;
+        position: absolute;
+        overflow: hidden;
+        @include respond(tab-port){
+            width: 28vw;
+            height: 28vw;
+        }
+        @include respond(tab-port-2){
+            width: 75vw;
+            height: 33rem;
+        }
+        @include respond(phone){
+            width: 90vw;
+            height: 33rem;
+        }
+        p{text-align: center;}
+        div{
+            width: 23vw;
+            height: 23vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $greenv;
+            transform: translateY(28vw);
+            transition: 0.5s;
+            @include respond(tab-port){
+                width: 28vw;
+                height: 28vw;
+            }
+            @include respond(tab-port-2){
+                width: 75vw;
+                height: 33rem;
+                transform: translateY(33rem);
+            }
+            @include respond(phone){
+                width: 90vw;
+                height: 33rem;
+            }
+        }
+
+    }
+
+}
+@include respond(tab-port){
+    .slide-area__front__menu {
+        display: none;
+    }
+}

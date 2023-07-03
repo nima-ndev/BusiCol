@@ -1,0 +1,74 @@
+.cases{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    .myslide{
+        overflow: hidden;
+        text-align: center;
+        width: 50%;
+        display: none;
+        @include respond(tab-port-2){
+            width: 90%;
+          }
+        .exit{
+            animation-name: example;
+            animation-duration: 1s;
+        }
+        .enter{
+            animation-name: enter;
+            animation-duration: 1s;
+        }
+        p{
+            font-size: 2rem;
+            color: rgb(126, 126, 126);
+        }
+        h5{
+            font-size:1.5rem
+        }
+        h7{
+            font-size:1.3rem
+        }
+    }
+    #first-slide{
+        display: block;
+    }
+    .circle{
+        display: flex;
+        gap: 10px;
+    }
+    .case-icon{
+        transform: scale(0.6);
+    }
+}
+.inactive{
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.5)50%,rgba(255, 255, 255, 0.5)50%);
+    z-index: 3;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    // display: inline;
+    &-2{
+        margin-left: 100px;
+    }
+    &-3{
+        margin-left: 200px;
+    }
+}
+
+@keyframes example {
+    100% {transform: translateX(100%);}
+  }
+@keyframes enter {
+    0%{transform: translateX(-100%);}
+    100% {}
+  }
+
+@media (max-width: 56.25em){
+    .myslide h2{
+        font-size: 8rem;
+    }
+};
